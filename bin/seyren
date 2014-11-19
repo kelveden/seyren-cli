@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+    fs = require('fs'),
+    dir = path.resolve(process.cwd(), 'node_modules', 'seyren', 'lib');
+
+if (!fs.existsSync(dir)) {
+  dir = path.join('..', 'lib');
+}
+
+require(path.join(dir, 'seyren'));

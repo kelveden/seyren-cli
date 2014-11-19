@@ -1,0 +1,39 @@
+{
+  "name": "seyren-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./lib/seyren.js",
+  "bin": "./bin/seyren",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kelveden/seyren"
+  },
+  "keywords": [],
+  "author": "Alistair Dutton <kelveden@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/kelveden/seyren/issues"
+  },
+  "dependencies": {
+    "colors": "1.0.3",
+    "lodash": "2.4.1",
+    "optimist": "0.6.1",
+    "request": "2.48.0",
+    "when": "3.6.3"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "freeport": "1.0.3",
+    "gulp": "3.8.10",
+    "gulp-bump": "0.1.11",
+    "gulp-complexity": "0.3.0",
+    "gulp-debug": "1.0.1",
+    "gulp-jshint": "1.9.0",
+    "gulp-mocha": "2.0.0",
+    "gulp-util": "3.0.1",
+    "jshint-stylish": "1.0.0",
+    "milli": "3.2.1",
+    "minimist": "1.1.0",
+    "vanilli": "1.1.5"
+  }
+}
