@@ -22,7 +22,7 @@
     "when": "3.6.3"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
+    "chai": "1.10.0",
     "freeport": "1.0.3",
     "gulp": "3.8.10",
     "gulp-bump": "0.1.11",
