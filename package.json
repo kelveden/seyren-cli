@@ -19,6 +19,7 @@
   "dependencies": {
     "colors": "1.0.3",
     "lodash": "2.4.1",
+    "open": "0.0.5",
     "optimist": "0.6.1",
     "request": "2.48.0",
     "when": "3.6.3"
@@ -36,7 +37,6 @@
     "jshint-stylish": "1.0.0",
     "milli": "3.2.1",
     "minimist": "1.1.0",
-    "open": "0.0.5",
     "vanilli": "1.1.5"
   }
 }
