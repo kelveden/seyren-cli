@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "./lib/seyren.js",
-  "bin": "./bin/seyren",
+  "bin": {
+      "seyren": "./bin/seyren"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/kelveden/seyren"
