@@ -68,10 +68,7 @@ describe("check command", function () {
 
             .run(function () {
                 check.execute(seyren, "myid")
-                    .then(function (data) {
-                        expect(data).to.not.be.null;
-                    })
-                    .done(done, done);
+                    .done(function () { done(); }, done);
             });
     });
 });

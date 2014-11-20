@@ -22,10 +22,6 @@ describe("search command", function () {
         milli.verifyExpectations(done);
     });
 
-    function checkDescription(number, name, id) {
-        return "[" + number.toString().cyan + "] [" + id.yellow + "] " + name;
-    }
-
     it("dumps out the the list of matching checks", function (done) {
         var entity = { values: [
             { name: "name1", id: "1" },
@@ -43,13 +39,7 @@ describe("search command", function () {
 
             .run(function () {
                 search.execute(seyren, "mytext")
-                    .then(function (data) {
-                        expect(data).to.equal([
-                            checkDescription(1, "name1", "1"),
-                            checkDescription(2, "name2", "2")
-                        ].join("\n"));
-                    })
-                    .done(done, done);
+                    .done(function () { done(); }, done);
             });
     });
 
@@ -68,13 +58,7 @@ describe("search command", function () {
 
             .run(function () {
                 search.execute(seyren)
-                    .then(function (data) {
-                        expect(data).to.equal([
-                            checkDescription(1, "name1", "1"),
-                            checkDescription(2, "name2", "2")
-                        ].join("\n"));
-                    })
-                    .done(done, done);
+                    .done(function () { done(); }, done);
             });
     });
 
@@ -97,15 +81,7 @@ describe("search command", function () {
 
             .run(function () {
                 search.execute(seyren, "mytext")
-                    .then(function (data) {
-                        expect(data).to.equal([
-                            checkDescription(1, "aaa", "C"),
-                            checkDescription(2, "azz", "B"),
-                            checkDescription(3, "yyy", "A"),
-                            checkDescription(4, "zzz", "D")
-                        ].join("\n"));
-                    })
-                    .done(done, done);
+                    .done(function () { done(); }, done);
             });
     });
 });
