@@ -1,6 +1,6 @@
 {
   "name": "seyren-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./lib/seyren.js",
   "bin": {
@@ -10,7 +10,10 @@
     "type": "git",
     "url": "https://github.com/kelveden/seyren"
   },
-  "keywords": ["seyren", "cli"],
+  "keywords": [
+    "seyren",
+    "cli"
+  ],
   "author": "Alistair Dutton <kelveden@gmail.com>",
   "license": "BSD-3-Clause",
   "bugs": {
