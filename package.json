@@ -36,6 +36,7 @@
     "jshint-stylish": "1.0.0",
     "milli": "3.2.1",
     "minimist": "1.1.0",
+    "open": "0.0.5",
     "vanilli": "1.1.5"
   }
 }
