@@ -55,6 +55,12 @@ seyren search mytext
 seyren check mycheckid
 ```
 
+ * Display the raw JSON of the check with id "mycheckid"
+
+```
+seyren check mycheckid --raw
+```
+
  * Display the details of the 5th check from the last search
 
 ```
