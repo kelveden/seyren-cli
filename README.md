@@ -81,4 +81,6 @@ Rather than installing from npm you're better off running from the source code i
 npm link
 ```
 
-The build tool is gulp. So, make sure that `./node_modules/.bin' is on your path and then run `gulp`. (You could install gulp globally of course but then you're not guaranteed to be using the version of gulp that's used in the travis CI build.) 
+This will create a symlink from the source seyren executable to the global node_modules folder.
+
+The build tool is gulp. So, make sure that `./node_modules/.bin` is on your path and then run `gulp`. (You could install gulp globally of course but then you're not guaranteed to be using the version of gulp that's used in the travis CI build.) 
