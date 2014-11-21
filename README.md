@@ -81,6 +81,6 @@ Rather than installing from npm you're better off running from the source code i
 npm link
 ```
 
-This will create a symlink from the source seyren executable to the global node_modules folder.
+This will create a symlink from the source seyren executable to the global node_modules folder. So, you should now be able to run `seyren` as if you installed via npm.
 
 The build tool is gulp. So, make sure that `./node_modules/.bin` is on your path and then run `gulp`. (You could install gulp globally of course but then you're not guaranteed to be using the version of gulp that's used in the travis CI build.) 
