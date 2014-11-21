@@ -72,3 +72,13 @@ seyren check 5
 ```
 seyren open 3
 ```
+
+Contributing
+------------
+Rather than installing from npm you're better off running from the source code itself. Firstly, make sure you've uninstalled seyren-cli (`npm uninstall seyren-cli`) then clone the repo and then:
+
+```
+npm link
+```
+
+The build tool is gulp. So, make sure that `./node_modules/.bin' is on your path and then run `gulp`. (You could install gulp globally of course but then you're not guaranteed to be using the version of gulp that's used in the travis CI build.) 
