@@ -1,7 +1,7 @@
 {
   "name": "seyren-cli",
   "version": "0.1.1",
-  "description": "",
+  "description": "CLI for Seyren",
   "main": "./lib/seyren.js",
   "bin": {
     "seyren": "./bin/seyren"
