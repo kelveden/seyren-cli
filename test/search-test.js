@@ -4,7 +4,7 @@ var chai = require('chai'),
     vanilliPort = process.env.vanilliPort,
     milli = require('milli').configure({ port: parseInt(vanilliPort) }),
     search = require('../lib/commands/search'),
-    Seyren = require('../lib/api');
+    Seyren = require('../lib/seyren-api');
 
 require('colors');
 
@@ -38,7 +38,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren, "mytext")
+                search.execute(seyren, null, "mytext")
                     .done(function () { done(); }, done);
             });
     });
@@ -57,7 +57,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren)
+                search.execute(seyren, null)
                     .done(function () { done(); }, done);
             });
     });
@@ -80,7 +80,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren, "mytext")
+                search.execute(seyren, null, "mytext")
                     .done(function () { done(); }, done);
             });
     });

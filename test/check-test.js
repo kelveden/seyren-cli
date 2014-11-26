@@ -5,7 +5,8 @@ var chai = require('chai'),
     milli = require('milli').configure({ port: parseInt(vanilliPort) }),
     check = require('../lib/commands/check'),
     MissingArgumentException = require('../lib/exceptions/missing-argument-exception'),
-    Seyren = require('../lib/api');
+    Graphite = require('../lib/graphite-api'),
+    Seyren = require('../lib/seyren-api');
 
 var dummyCheck = { id: '5464d353e4b026d842a579a2',
         name: 'prod-mixradweb-load',
@@ -38,13 +39,16 @@ var dummyCheck = { id: '5464d353e4b026d842a579a2',
         error: '3.0',
         lastCheck: 1416498005058
     },
-    dummyAlerts = { values: [] };
+    dummyAlerts = { values: [] },
+    dummyDatapoints = [{ datapoints: [] }];
 
 describe("check command", function () {
     var config = {
-            seyrenUrl: "http://localhost:" + vanilliPort
+            seyrenUrl: "http://localhost:" + vanilliPort,
+            graphiteUrl: "http://localhost:" + vanilliPort
         },
-        seyren = new Seyren(config);
+        seyren = new Seyren(config),
+        graphite = new Graphite(config);
 
     beforeEach(function (done) {
         milli.clearStubs(done);
@@ -56,7 +60,7 @@ describe("check command", function () {
 
     it("throws an exception if too few arguments", function () {
         expect(function () {
-            check.execute(seyren);
+            check.execute(seyren, graphite);
         }).to.throw(MissingArgumentException);
     });
 
@@ -72,10 +76,15 @@ describe("check command", function () {
                     .respondWith(200)
                     .body(dummyAlerts)
                     .contentType("application/json")
-            )
+            ),
+            milli.expectRequest(
+                milli.onGet('/render')
+                    .respondWith(200)
+                    .body(dummyDatapoints)
+                    .contentType("application/json"))
         )
             .run(function () {
-                check.execute(seyren, "myid")
+                check.execute(seyren, graphite, "myid")
                     .done(function () {
                         done();
                     }, done);

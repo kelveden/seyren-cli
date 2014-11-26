@@ -21,6 +21,7 @@
     "url": "https://github.com/kelveden/seyren-cli/issues"
   },
   "dependencies": {
+    "ascii-chart": "1.1.0",
     "colors": "1.0.3",
     "lodash": "2.4.1",
     "moment": "2.8.4",
