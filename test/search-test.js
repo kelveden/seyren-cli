@@ -11,8 +11,7 @@ require('colors');
 describe("search command", function () {
     var config = {
             seyrenUrl: "http://localhost:" + vanilliPort
-        },
-        seyren = new Seyren(config);
+        };
 
     beforeEach(function (done) {
         milli.clearStubs(done);
@@ -38,7 +37,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren, "mytext")
+                search.execute(config, "mytext")
                     .done(function () { done(); }, done);
             });
     });
@@ -57,7 +56,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren)
+                search.execute(config)
                     .done(function () { done(); }, done);
             });
     });
@@ -80,7 +79,7 @@ describe("search command", function () {
                     .contentType("application/json")))
 
             .run(function () {
-                search.execute(seyren, "mytext")
+                search.execute(config, "mytext")
                     .done(function () { done(); }, done);
             });
     });

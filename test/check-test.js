@@ -43,8 +43,7 @@ var dummyCheck = { id: '5464d353e4b026d842a579a2',
 describe("check command", function () {
     var config = {
             seyrenUrl: "http://localhost:" + vanilliPort
-        },
-        seyren = new Seyren(config);
+        };
 
     beforeEach(function (done) {
         milli.clearStubs(done);
@@ -56,7 +55,7 @@ describe("check command", function () {
 
     it("throws an exception if too few arguments", function () {
         expect(function () {
-            check.execute(seyren);
+            check.execute(config);
         }).to.throw(MissingArgumentException);
     });
 
@@ -75,7 +74,7 @@ describe("check command", function () {
             )
         )
             .run(function () {
-                check.execute(seyren, "myid")
+                check.execute(config, "myid")
                     .done(function () {
                         done();
                     }, done);
