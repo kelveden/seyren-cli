@@ -73,6 +73,12 @@ seyren check 5
 seyren open 3
 ```
 
+ * Status dashboard for all favourite checks (includes period spent in warn or error state in last 24 hours)
+
+```
+seyren dashboard
+```
+
 Contributing
 ------------
 Rather than installing from npm you're better off running from the source code itself. Firstly, make sure you've uninstalled seyren-cli (`npm uninstall seyren-cli`) then clone the repo and then:
