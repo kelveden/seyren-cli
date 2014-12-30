@@ -24,7 +24,7 @@ describe("alert analyzer", function () {
             ]);
 
             expect(spans).to.deep.equal([
-                { start: 1000, end: 3000, type: "WARN" }
+                { duration: 0, start: 1000, end: 3000, type: "WARN" }
             ]);
         });
 
@@ -37,8 +37,8 @@ describe("alert analyzer", function () {
             ]);
 
             expect(spans).to.deep.equal([
-                { start: 1000, end: 3000, type: "WARN" },
-                { start: 5000, end: 8000, type: "WARN" }
+                { duration: 0, start: 1000, end: 3000, type: "WARN" },
+                { duration: 0, start: 5000, end: 8000, type: "WARN" }
             ]);
         });
 
@@ -50,7 +50,7 @@ describe("alert analyzer", function () {
             ]);
 
             expect(spans).to.deep.equal([
-                { start: 1000, end: 3000, type: "WARN" }
+                { duration: 0, start: 1000, end: 3000, type: "WARN" }
             ]);
         });
     });
@@ -126,24 +126,6 @@ describe("alert analyzer", function () {
             expect(spans).to.deep.equal([
                 { start: 100000, end: 200000, duration: 0 }
             ]);
-        });
-    });
-
-    describe("calculateTotalDurationOf", function () {
-        it("adds up all durations of spans", function () {
-            var total = analyzer.calculateTotalDurationOf([
-                { duration: 2000 },
-                { duration: 3000 },
-                { duration: 200 }
-            ]);
-
-            expect(total).to.equal(5200);
-        });
-
-        it("results in 0 if no spans", function () {
-            var total = analyzer.calculateTotalDurationOf([]);
-
-            expect(total).to.equal(0);
         });
     });
 });
